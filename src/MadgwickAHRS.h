@@ -69,6 +69,12 @@ public:
         if (!anglesComputed) computeAngles();
         return yaw;
     }
+
+    float getQ0() const { return q0; }
+    float getQ1() const { return q1; }
+    float getQ2() const { return q2; }
+    float getQ3() const { return q3; }
+
 };
 #endif
 
