@@ -148,6 +148,14 @@ void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az
 }
 
 //-------------------------------------------------------------------------------------------
+// IMU algorithm update with delta
+
+void Madgwick::updateIMU(float gx, float gy, float gz, float ax, float ay, float az, float delta) {
+	invSampleFreq = delta;
+	updateIMU(gx, gy, gz, ax, ay, az);
+}
+
+//-------------------------------------------------------------------------------------------
 // IMU algorithm update
 
 void Madgwick::updateIMU(float gx, float gy, float gz, float ax, float ay, float az) {
